@@ -1,3 +1,5 @@
+<!-- 搜索组件 -->
+<SearchInput></SearchInput>
 <!-- 轮播图开始 -->
 <view class="swiper_wrap">
     <!-- indicator-dots：指示点 autoplay：自动轮播  circular：无缝衔接-->
@@ -29,8 +31,7 @@
     <image class="floor_title" mode="widthFix" src="{{item1.floor_title.image_src}}"/>
     <navigator class="floor_content" wx:for="{{item1.product_list}}" wx:for-index="index2" wx:for-item="item2" wx:key="item1.product_list.name">
         <!-- 判断是否是第一张 -->
-        <image class="floor_content_img" mode="{{index2===0 ? 'widthFix' : 'scaleToFill'}}" src="{{item2.image_src}}"/>
-          
+        <image class="floor_content_img" mode="{{index2===0 ? 'widthFix' : 'scaleToFill'}}" src="{{item2.image_src}}"/> 
     </navigator>
 </view>
   

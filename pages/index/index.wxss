@@ -12,6 +12,9 @@ swiper {
 .nav_item_img {
   width: 70%;
 }
+.floor_title {
+  background-color: #eee;
+}
 .floor_content {
   float: left;
   width: 33.33%;

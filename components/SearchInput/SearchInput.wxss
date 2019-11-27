@@ -1,0 +1,16 @@
+.search{
+    /* 如果设计稿宽度为375px 那么1px = 2rpx    80rpx相当于40px*/
+    height: 80rpx;
+    padding: 15rpx;
+    background-color: #eb4450;
+}
+.search view{
+    height: 100%;
+    background-color: #fff;
+    border-radius: 8rpx;
+    font-size: 24rpx;
+    /* 内容局中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
