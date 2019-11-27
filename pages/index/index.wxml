@@ -10,3 +10,11 @@
     </swiper>
 </view>
 <!-- 轮播图结束 -->
+<!-- 导航开始 -->
+<view class="nav">
+    <navigator class="nav_item" wx:for="{{navsList}}" wx:key="item.name">
+        <image mode="widthFix" src="{{item.image_src}}" class="nav_item_img"/>    
+    </navigator>     
+</view>
+  
+<!-- 导航结束 -->
