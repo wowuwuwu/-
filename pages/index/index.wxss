@@ -12,3 +12,13 @@ swiper {
 .nav_item_img {
   width: 70%;
 }
+.floor_content {
+  float: left;
+  width: 33.33%;
+}
+.floor_content_img {
+  display: block;
+}
+.floor_content_img:nth-last-child(-n+4) {
+  height: 208.97413793rpx;
+}

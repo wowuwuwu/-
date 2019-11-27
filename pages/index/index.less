@@ -14,3 +14,17 @@ swiper{
         }
     }
 }
+.floor{
+    &_title{}
+    &_content{
+        float: left;
+        width: 33.33%;
+        &_img{
+            display: block;//去除图片3px间隙
+            // 后4张图片高度为第一张的一半
+            &:nth-last-child(-n+4){
+                height: (750rpx/3)*386/232/2+1;
+            }
+        }
+    }
+}
