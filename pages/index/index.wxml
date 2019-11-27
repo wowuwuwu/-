@@ -1,0 +1,12 @@
+<!-- 轮播图开始 -->
+<view class="swiper_wrap">
+    <!-- indicator-dots：指示点 autoplay：自动轮播  circular：无缝衔接-->
+    <swiper indicator-dots autoplay circular>
+    <!-- 循环data中的轮播图数组 -->
+    <!-- widthFix 宽度不变 高自适应  宽高比不变 -->
+    <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+        <image mode="widthFix" src="{{item.image_src}}"/>     
+    </swiper-item>  
+    </swiper>
+</view>
+<!-- 轮播图结束 -->
