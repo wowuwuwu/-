@@ -1,2 +1,27 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<!-- 搜索框 -->
+<view class="cate_search">
+    <SearchInput></SearchInput>
+</view>
+<!-- 分类内容 -->
+<view class="cate_content">
+    <!-- 左侧分类菜单 -->
+    <view class="cate_content_menu">
+        <view class="cate_content_menu_item" wx:for="{{categoryName}}" wx:key="item">{{item}}</view>
+    </view>
+    <!-- 右侧分类详情 -->
+    <view class="cate_content_goods">
+        <view class="cate_content_goods_content" wx:for="{{categoryDetail}}" wx:for-index="index1" wx:for-item="item1" wx:key="cat_id">
+            <view class="cate_content_goods_content_title">
+                <text>/</text>
+                {{item1.cat_name}}
+                <text>/</text>
+            </view>
+            <view class="cate_content_goods_content_list">
+                <navigator class="goods_item" wx:for="{{item1.children}}" wx:for-index="index2" wx:for-item="item2" wx:key="cat_id">
+                    <image mode="widthFix" src="{{item2.cat_icon}}"></image>
+                    <view class="list_name">{{item2.cat_name}}</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

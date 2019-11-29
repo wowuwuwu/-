@@ -1,0 +1,61 @@
+.cate_search {}
+
+// 内容高度等于视图100vh-搜索框高度
+// calc -运算符两侧要有空格隔开才生效  不让页面有上下滑动效果，让里面的内容动
+.cate_content {
+    height: calc(100vh - 80rpx);
+    display: flex;
+
+    // vh视图 100是视图占满   
+    // 子项高度默认等于父项（设display的）高度 
+    &_menu {
+        width: 200rpx;
+        background-color: #eee;
+        // 不超出没有滚动条 超出就会出现滚动条
+        overflow: auto;
+
+        &_item {
+            height: 80rpx;
+            font-size: 28rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            color: black;
+        }
+    }
+
+    &_goods {
+        flex: 1;
+        overflow: auto;
+        &_content {
+            &_title {
+                height: 80rpx;
+                font-size: 26rx;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text {
+                    margin: 0 10px;
+                    color: #ccc;
+                }
+            }
+            &_list {
+                display: flex;
+                flex-wrap: wrap;
+                .goods_item {
+                    width: 33.33%;
+                    text-align: center;
+                    font-size: 24rpx;
+                    color: #666;
+                    image {
+                        width: 50%;
+                    }
+                }
+                .list_name{}
+            }
+
+        }
+
+    }
+}
