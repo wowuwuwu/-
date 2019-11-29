@@ -23,11 +23,15 @@
             border-bottom: 1px solid #ccc;
             color: black;
         }
+        &_item.active{
+            color: #eb4450;
+            border-left: 2px solid #eb4450;
+        }
     }
 
     &_goods {
         flex: 1;
-        overflow: auto;
+        overflow: hidden;
         &_content {
             &_title {
                 height: 80rpx;

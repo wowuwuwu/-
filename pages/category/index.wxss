@@ -16,9 +16,13 @@
   border-bottom: 1px solid #ccc;
   color: black;
 }
+.cate_content_menu_item.active {
+  color: #eb4450;
+  border-left: 2px solid #eb4450;
+}
 .cate_content_goods {
   flex: 1;
-  overflow: auto;
+  overflow: hidden;
 }
 .cate_content_goods_content_title {
   height: 80rpx;

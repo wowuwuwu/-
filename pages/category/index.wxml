@@ -6,10 +6,12 @@
 <view class="cate_content">
     <!-- 左侧分类菜单 -->
     <view class="cate_content_menu">
-        <view class="cate_content_menu_item" wx:for="{{categoryName}}" wx:key="item">{{item}}</view>
+        <!--bindtap不能代参 需要用data-index=传参 -->
+        <view bindtap="bindMenuTap" data-index="{{index}}" class="cate_content_menu_item {{currentIndex===index?'active':''}}" wx:for="{{categoryName}}" wx:key="item">{{item}}</view>
     </view>
     <!-- 右侧分类详情 -->
-    <view class="cate_content_goods">
+    <!-- scroll-view滚动视图  scroll-y允许纵向滚动 scroll-top右侧滚动条的高度 我们加载时候让滚动条高度为0-->
+    <scroll-view scroll-y scroll-top="{{scrollTop}}" class="cate_content_goods">
         <view class="cate_content_goods_content" wx:for="{{categoryDetail}}" wx:for-index="index1" wx:for-item="item1" wx:key="cat_id">
             <view class="cate_content_goods_content_title">
                 <text>/</text>
@@ -23,5 +25,5 @@
                 </navigator>
             </view>
         </view>
-    </view>
+    </scroll-view>
 </view>
