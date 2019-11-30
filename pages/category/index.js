@@ -1,3 +1,4 @@
+import request from "../../request/request";
 Page({
   /**
    * 页面的初始数据
@@ -30,10 +31,10 @@ Page({
       this.getCategoryList();
     } else {
       // 我们假设时间超过10秒就过期 重新发送请求
-      if (Date.now() -categoryList.time>10*1000){
+      if (Date.now() - categoryList.time > 10 * 1000) {
         console.log("过期，重新请求");
         this.getCategoryList();
-      }else{
+      } else {
         // 没有过期
         console.log("没有过期，旧数据");
         this.CategoryList = categoryList.list;
@@ -49,23 +50,21 @@ Page({
   },
   // 获取分类数据
   getCategoryList() {
-    wx.request({
-      url: "https://api.zbztb.cn/api/public/v1/categories",
-      success: (result) => {
-        // console.log(result.data.message);
-        this.CategoryList = result.data.message;
-        this.setData({
-          // 存放分类名字
-          categoryName: this.CategoryList.map(v => v.cat_name),
-          // 右侧分类详情
-          categoryDetail: this.CategoryList[this.data.currentIndex].children
-        })
-        // 将数据存到本地带上时间
-        wx.setStorageSync('categoryList', {
-          list: this.CategoryList,
-          time: Date.now()
-        });
-      }
+    request({url: "categories"})
+    .then(result => {
+      console.log(result);
+      this.CategoryList = result.data.message;
+      this.setData({
+        // 存放分类名字
+        categoryName: this.CategoryList.map(v => v.cat_name),
+        // 右侧分类详情
+        categoryDetail: this.CategoryList[this.data.currentIndex].children
+      })
+      // 将数据存到本地带上时间
+      wx.setStorageSync('categoryList', {
+        list: this.CategoryList,
+        time: Date.now()
+      });
     })
   },
   // 菜单点击事件
