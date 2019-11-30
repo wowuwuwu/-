@@ -8,3 +8,7 @@ page,view,text,image,button,swiper,swiper-item,navigator,checkbox,rich-text,radi
 image{
     width:100%;
 }
+page{
+    /* 设置主题色 后面直接调用 */
+    --themeColor:#eb4450;
+}

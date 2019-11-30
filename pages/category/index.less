@@ -24,8 +24,11 @@
             color: black;
         }
         &_item.active{
-            color: #eb4450;
-            border-left: 2px solid #eb4450;
+            // color: #eb4450;
+            color: var(--themeColor);
+            // currentColor是原生css的属性，等于当前字体的颜色
+            border-left: 5rpx solid currentColor;
+            // border-left: 2px solid #eb4450;
         }
     }
 
