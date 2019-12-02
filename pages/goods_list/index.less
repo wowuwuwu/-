@@ -1,0 +1,37 @@
+.goodsList{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    .goods_img{
+        flex:1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        image{
+            width: 70%;
+        }
+    }
+    .goods_des{
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // 设置伸缩盒的子级设置多行省略时，父级要设置overflow: hidden;
+        overflow: hidden;
+        .goods_text{
+            font-size: 28rpx;
+            font-weight: bold;
+            display: flex;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp:2;
+            -webkit-box-orient: vertical;
+        }
+        .goods_price{
+            color: var(--themeColor);
+            font-size: 34rpx;
+        }
+    }
+}

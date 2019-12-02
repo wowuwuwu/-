@@ -19,7 +19,7 @@
                 <text>/</text>
             </view>
             <view class="cate_content_goods_content_list">
-                <navigator class="goods_item" wx:for="{{item1.children}}" wx:for-index="index2" wx:for-item="item2" wx:key="cat_id">
+                <navigator url="/pages/goods_list/index?cid={{item2.cat_id}}" class="goods_item" wx:for="{{item1.children}}" wx:for-index="index2" wx:for-item="item2" wx:key="cat_id">
                     <image mode="widthFix" src="{{item2.cat_icon}}"></image>
                     <view class="list_name">{{item2.cat_name}}</view>
                 </navigator>

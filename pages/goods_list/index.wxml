@@ -1,2 +1,17 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<view>
+    <navigator class="goodsList" wx:for="{{goods}}" wx:key="item.goods_id">
+            <view class="goods_img" wx:if="{{item.goods_small_logo===''}}">
+                <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2297649591,445302285&fm=26&gp=0.jpg" mode="widthFix"/>
+            </view>
+            <view class="goods_img" wx:else>
+                <image src="{{item.goods_small_logo}}" mode="widthFix"/>
+            </view> 
+        <view class="goods_des">
+        <view class="goods_text">{{item.goods_name}}</view>
+        <view class="goods_price">￥{{item.goods_price}}</view> 
+        </view>
+    </navigator>
+    <view class="bottom">   
+    </view>    
+</view>
+  
